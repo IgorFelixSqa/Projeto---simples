@@ -23,6 +23,3 @@ jobs:
             
           # A "senha" ou nome do evento que vai conectar as duas pipelines
           event-type: iniciar-testes-automatizados
-            
-          # Opcional: Eles podem enviar dados para vocês testarem!
-          client-payload: '{"ambiente": "homologacao", "url": "https://dev.site.com"}'
