@@ -1,0 +1,6 @@
+name: Integration-Pipe
+on:
+  push:
+    branches:
+      - main
+jobs:
