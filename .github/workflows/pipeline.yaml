@@ -4,3 +4,24 @@ on:
     branches:
       - main
 jobs:
+  Chama-Repo: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Integra repositórios
+        uses: peter-evans/repository-dispatch@v3
+        
+        # Token gerado pela equipe de QA
+        # Obs: 
+        # - Token é gerado em uma conta que hospeda o diretório dos testes.
+        # - Token é trocado por um segredo no repositório que se conectará aos testes. 
+        token: ${{ secrets.QA_REPO_TOKEN }} 
+          
+        # O caminho do repositório da sua equipe de testes
+        # Obs: Preencher com host do repositório e nome do repositório.
+        repository: https://github.com/IgorFelixSqa/Projeto-login-Testes.git
+          
+        # A "senha" ou nome do evento que vai conectar as duas pipelines
+        event-type: iniciar-testes-automatizados
+          
+        # Opcional: Eles podem enviar dados para vocês testarem!
+        client-payload: '{"ambiente": "homologacao", "url": "https://dev.site.com"}' 
