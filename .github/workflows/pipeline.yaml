@@ -18,7 +18,7 @@ jobs:
           
         # O caminho do repositório da sua equipe de testes
         # Obs: Preencher com host do repositório e nome do repositório.
-        repository: https://github.com/IgorFelixSqa/Projeto-login-Testes.git
+        repository: IgorFelixSqa/Projeto-login-Testes
           
         # A "senha" ou nome do evento que vai conectar as duas pipelines
         event-type: iniciar-testes-automatizados
