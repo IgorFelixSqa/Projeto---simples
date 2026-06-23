@@ -1,25 +1,17 @@
-name: Integration-Pipe
-on:
+name: Conecta-Repo
+on: 
   push:
     branches:
       - main
 jobs:
-  Chama-Repo: 
+  Integra-Repo:
     runs-on: ubuntu-latest
     steps:
-      - name: Integra repositórios
+      - name: Action de integração dos repositórios
         uses: peter-evans/repository-dispatch@v3
-        with:
-          
-          # Token gerado pela equipe de QA
-          # Obs: 
-          # - Token é gerado em uma conta que hospeda o diretório dos testes.
-          # - Token é trocado por um segredo no repositório que se conectará aos testes. 
-          token: ${{ secrets.QA_REPO_TOKEN }} 
-            
-          # O caminho do repositório da sua equipe de testes
-          # Obs: Preencher com host do repositório e nome do repositório.
+        with: 
+          token: $${{secrets.QA_REPO_TOKEN}}   
+
           repository: IgorFelixSqa/Projeto-login-Testes
-            
-          # A "senha" ou nome do evento que vai conectar as duas pipelines
-          event-type: iniciar-testes-automatizados
+
+          event-type: IntegraRepositorios
