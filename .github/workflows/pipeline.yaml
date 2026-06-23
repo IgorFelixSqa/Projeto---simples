@@ -10,7 +10,7 @@ jobs:
       - name: Action de integração dos repositórios
         uses: peter-evans/repository-dispatch@v3
         with: 
-          token: $${{secrets.QA_REPO_TOKEN}}   
+          token: ${{ secrets.QA_REPO_TOKEN }}   
 
           repository: IgorFelixSqa/Projeto-login-Testes
 
